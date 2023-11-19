@@ -3,41 +3,63 @@
 <head>
     <style>
     * {
-      margin: 0;
-      padding: 0;
+        margin: 0;
+        padding: 0;
     }
 
     body {
-      background-color: #dce2c8;
+        background-color: #dce2c8;
     }
 
+    /*HEADER*/
     .header ul {
-      list-style-type: none;
-      padding: 10px;
-      overflow: hidden;
-      background-color: #f96900;
+        list-style-type: none;
+        padding: 10px;
+        overflow: hidden;
+        background-color: #f96900;
     }
 
     .header li {
-      float: right;
+        float: right;
     }
 
     .header li a, i {
-      color: black
+        color: black
     }
 
     .header a:hover {
-      text-decoration: none;
+        text-decoration: none;
     }
 
+    /*MAIN*/
     .main {
-      margin-top: 2%;
+        margin-top: 2%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .buttons .item {
+        flex-grow: 1;
+        text-align: center;
+        padding: 5%;
+        margin: 10px;
+        text-decoration: none;
+        border-radius: 25px;
+        background: #a8dcd1;
+        color: black;
+    }
+
+    .buttons a:hover {
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     }
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/0aa2c3c0f4.js" crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/0aa2c3c0f4.js" crossorigin="anonymous"></script>
     <title>{% block title %}PalSU Library{% endblock %}</title>
 </head>
 <body>
