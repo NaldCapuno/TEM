@@ -4,15 +4,19 @@
 {% block title %}PalSU Library | My Account{% endblock %}
 
 {% block content %}
-    <div id="content" name="content" class="main">
-        <div class="row justify-content-center">
-            <div class="col-10">
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button type="submit" class="btn btn-warning">Update Account</button>
-                </form>
+    {% if user.is_authenticated %}
+        <div id="content" name="content" class="main">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-warning">Update Account</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    {% else %}
+        <p>You need to log in to access this page <a href="/login">Log In here</a></p>
+    {% endif %}
 {% endblock %}
