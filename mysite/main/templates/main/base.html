@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}PalSU Library{% endblock %}</title>
 </head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+  body {
+    background-color: #dce2c8;
+  }
+
+  .header {
+    background-color: #f96900;
+  }
+
+  .content {
+    margin: 1%;
+    padding: 1%;
+  }
+</style>
 <body>
     <!--HEADER-->
     <section class="header">
       <img src="https://psu.palawan.edu.ph/wp-content/uploads/2022/11/logo.png" alt="home"/>
     </section>
-    {% block content %}
-    {% endblock %}
+    <section class="content">
+      {% block content %}
+      {% endblock %}
+    </section>
 </body>
 </html>
