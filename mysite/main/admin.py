@@ -4,5 +4,5 @@ from .models import UserInfo
 # Register your models here.
 @admin.register(UserInfo)
 class UserInfoAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'middle_initial', 'last_name', 'student_number']
-    search_fields = ['first_name', 'middle_initial', 'last_name', 'student_number']
+    list_display = ['user', 'first_name', 'middle_name', 'last_name', 'student_number']
+    search_fields = ['user', 'first_name', 'middle_name', 'last_name', 'student_number']

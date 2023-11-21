@@ -1,12 +1,17 @@
 {% extends 'main/base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}PalSU Library | My Account{% endblock %}
+{% block title %}PalSU Library | Update Account{% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
-        <div id="content" name="content" class="main">
+        <div id="content" name="content" class="main" style="margin-bottom: 2%;">
             <div class="row justify-content-center">
+<<<<<<< HEAD:mysite/main/templates/main/update-account.html
+                <div class="col-10">
+                    <h2>Update Account</h2>
+                    <hr style="border: 2px solid black;">
+=======
                 <div class="col-5">
                     <!-- Display User Information -->
                     <h2>User Information:</h2>
@@ -15,6 +20,7 @@
 
                     <!-- Update Account Form -->
                     <h2>Update Account:</h2>
+>>>>>>> 978c8f18b62e52ea7d04d21dbc1ac573bb380aed:mysite/main/templates/main/account.html
                     <form method="POST">
                         {% csrf_token %}
                         {{ form|crispy }}
@@ -24,6 +30,6 @@
             </div>
         </div>
     {% else %}
-        <p>You need to log in to access this page <a href="/login">Log In here</a></p>
+        <p>You need to log in to access this page. <a href="/login">Log In here</a></p>
     {% endif %}
 {% endblock %}

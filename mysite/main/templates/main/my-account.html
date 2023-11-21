@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title %}PalSU Library | My Account {% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <style>
+            .info {
+                margin-top: 5%;
+                padding: 5%;
+                border-radius: 25px;
+                background-color: #a8dcd1;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+        <div class="info">
+            <h2>My Account</h2>
+            <hr style="border: 2px solid black;">
+            <p><b>Student Number: </b>{{ user_info.student_number }}</p>
+            <p><b>First Name: </b>{{ user_info.first_name }}</p>
+            <p><b>Middle Name: </b>{{ user_info.middle_name|default:"" }}</p>
+            <p><b>Last Name: </b>{{ user_info.last_name }}</p>
+        </div>
+    {% else %}
+        <p>You need to log in to access this page. <a href="/login">Log In here</a></p>
+    {% endif %}
+{% endblock %}
