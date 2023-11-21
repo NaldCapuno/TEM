@@ -3,5 +3,9 @@
 {% block title %}PalSU Library | My Library Card{% endblock %}
 
 {% block content %}
+    {% if user.is_authenticated %}
 
+    {% else %}
+        <p>You need to log in to access this page <a href="/login">Log In here</a></p>
+    {% endif %}
 {% endblock %}
