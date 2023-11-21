@@ -3,36 +3,40 @@
 {% block title %}PalSU Library | Home{% endblock %}
 
 {% block content %}
+    {% if user.is_authenticated %}
+    {% else %}
+        <p>You are currently not logged in. <a href="/login">Log In here</a></p>
+    {% endif %}
     <div class="library-image">
         <style>
             .library-image {
-                min-height: 35vh;
+                min-height: 40vh;
                 width: 100%;
                 background-image: url(https://scontent.fmnl13-2.fna.fbcdn.net/v/t1.6435-9/106937086_2149020465241909_4777986469613096779_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEu9OGMl3znMH2K2zYOJlvjftVfmmZpHvx-1V-aZmke_ICiPsHqPbRi4sAtoNqTx97GjVH2F9jLLCKFsa1t2uzC&_nc_ohc=v-uCtWJLURYAX-IZ_m0&_nc_ht=scontent.fmnl13-2.fna&oh=00_AfANNY3AWtWFSyUP3_AeAjktVMzdhTHPWv6JOoJdmjRevQ&oe=657D9B0F);
                 background-size: cover;
                 position: relative;
-                border-radius: 10px;
+                border-radius: 25px;
             }
         </style>
     </div>
     <div class="buttons">
-        <a href="" class="item">
+        <a href="/my-account" class="item">
             <i class="fa-solid fa-user fa-2xl"></i>
             <br />
             <br />
             My Account
         </a>
-        <a href="" class="item">
-            <i class="fa-solid fa-book fa-2xl"></i>
-            <br />
-            <br />
-            My Bookshelf
-        </a>
-        <a href="" class="item">
+        <a href="/my-library-card" class="item">
             <i class="fa-solid fa-id-card fa-2xl"></i>
             <br />
             <br />
             My Library Card
+        </a>
+        <a href="/update-account" class="item">
+            <i class="fa-solid fa-user-pen fa-lg"></i>
+            <br />
+            <br />
+            Update Account
         </a>
     </div>
 {% endblock %}
