@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UserInfoForm
+from .models import UserInfo
+from django.contrib.auth.models import User
 
 # Create your views here.
 def home(response):
@@ -10,7 +12,7 @@ def account(response):
         form = UserInfoForm(response.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/account')
     else:
         form = UserInfoForm()
     return render(response, 'main/account.html', {'form': form})
