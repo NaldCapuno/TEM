@@ -9,8 +9,8 @@ class UserInfo(models.Model):
     last_name = models.CharField(max_length=30, null=True)
     student_number = models.CharField(max_length=11, unique=True, null=True)
     email = models.EmailField(null=True)
-    front_library_card = models.ImageField('Front side of your library card:', upload_to='images/', null=True)
-    back_library_card = models.ImageField('Back side of your library card:', upload_to='images/', null=True)
+    front_library_card = models.ImageField('Picture of the front side of your library card:', upload_to='images/', null=True)
+    back_library_card = models.ImageField('Picture of the back side of your library card:', upload_to='images/', null=True)
 
     def __str__(self):
         return self.student_number
