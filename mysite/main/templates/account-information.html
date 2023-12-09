@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}PalSU Library | Update Account{% endblock %}
+{% block title %}PalSU Library | Account Information{% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
         <div id="content" name="content" class="main" style="margin-bottom: 2%;">
             <div class="row justify-content-center">
                 <div class="col-10">
-                    <h2>Update Account</h2>
+                    <h2>Account Information</h2>
                     <hr style="border: 2px solid black;">
                     <p>
+                        <b style="color:red">WARNING:</b> You can only submit your information once!
+                        <br>
+                        <br>
                         Kindly use <a href="https://www.vflat.com/?lang=en">vflat</a> to take a picture of your library card
                         <br>
                         Android: <a href="https://play.google.com/store/apps/details?id=com.voyagerx.scanner&hl=en&gl=US">Download Here</a>
@@ -20,7 +23,7 @@
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <button type="submit" class="btn btn-warning">Update Account</button>
+                        <button type="submit" class="btn btn-warning">Submit</button>
                     </form>
                 </div>
             </div>

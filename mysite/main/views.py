@@ -14,7 +14,7 @@ def my_library_card(response):
     user_info = UserInfo.objects.get(user=response.user)
     return render(response, 'my-library-card.html', {'user_info': user_info})
 
-def update_account(response):
+def account_information(response):
     if response.method == 'POST':
         form = UserInfoForm(response.POST, response.FILES)
         if form.is_valid():
@@ -23,4 +23,4 @@ def update_account(response):
     else:
         form = UserInfoForm(initial={'user': response.user})
 
-    return render(response, 'update-account.html', {'form': form})
+    return render(response, 'account-information.html', {'form': form})
