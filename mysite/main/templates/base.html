@@ -85,19 +85,30 @@
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     }
 
+    /* Flex container for images */
     .library_card_images {
         display: flex;
         text-align: center;
+        flex-wrap: wrap;
     }
 
     .library_card_images .image {
         display: inline-block;
         padding: 0px 10px;
         width: 50%;
+        box-sizing: border-box;
     }
 
+    /* Make the image responsive */
     .library_card_images .image img {
         width: 100%;
+        height: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+        .library_card_images .image {
+            width: 100%;
+        }
     }
     </style>
     <meta charset="utf-8">
